@@ -67,14 +67,14 @@ class Scoreboard
       for(int i = 0; i < 47; i++) { cout << "*"; } cout << endl;
        
        //proces to show the home team status
-       cout << "Home: \t"; 
+       cout << "Home> \t"; 
        if(home.getHomeStatus() == true)
        {
-         cout << "Team 1: " << tOne.getName() << "*"; 
+         cout << "Team 1: " << home.getName() << "*"; 
        }
        else if(visitor.getHomeStatus() == true)
        {
-         cout << "Team 1: " << tOne.getName() << "*"; 
+         cout << "Team 2: " << visitor.getName() << "*"; 
        }
        else
        {
@@ -93,6 +93,7 @@ int main()
   string newName = ""; 
   string userChoice = ""; 
   string newCoachName = ""; 
+  int homeTeamQuestion = 0; 
   int newScore = 0; 
 
   //Set the home team 
@@ -111,6 +112,7 @@ int main()
       //menu choices 
       cout << "A = Update Home Team Name" << endl; 
       cout << "B = Update Home Team Score" << endl; 
+      cout << "C = Update Home Status" << endl; 
       cout << "D = Update Visting Team Coach" << endl; 
       cout << "E = Exit" << endl;
       cout << ">"; 
@@ -131,6 +133,22 @@ int main()
         cout << "\nPlease enter a new score for the home team: "; 
         cin >> newScore; 
         tOne.setScore(newScore);  //set the new score for tOne        
+      }
+      else if(userChoice == "C" || userChoice == "c")
+      {
+        cout << "\nUpdate Home Status Module****" << endl; 
+        cout << "\nWho is the home team: 1 = T1, 2=T2: "; 
+        cin >> homeTeamQuestion; 
+        if(homeTeamQuestion == 1)
+        {
+          tOne.setHomeStatus(true); 
+          tTwo.setHomeStatus(false); 
+        }
+        else if(homeTeamQuestion == 2)
+        {
+          tOne.setHomeStatus(false); 
+          tTwo.setHomeStatus(true);
+        }
       }
       else if(userChoice == "D" || userChoice == "d")
       {
