@@ -68,11 +68,11 @@ class Scoreboard
        
        //proces to show the home team status
        cout << "Home: \t"; 
-       if(home.getHome() == true)
+       if(home.getHomeStatus() == true)
        {
          cout << "Team 1: " << tOne.getName() << "*"; 
        }
-       else if(visitor.getHome() == true)
+       else if(visitor.getHomeStatus() == true)
        {
          cout << "Team 1: " << tOne.getName() << "*"; 
        }
